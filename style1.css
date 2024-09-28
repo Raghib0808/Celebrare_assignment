@@ -1,0 +1,414 @@
+:root {
+    --main-posx: 0;
+    --main-posy: 0;
+  }
+
+body{
+    background-color: rgb(226, 223, 219);
+}
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    border: none;
+
+
+}
+
+
+.hero-section{
+            min-height: 100vh;
+           background-image: url("https://images.rawpixel.com/image_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIyLTA1L3B4MTE3OTM5My1pbWFnZS1rd3Z5MG94eC5qcGc.jpg") ;
+           background-repeat: no-repeat;
+           background-size: 100%;
+           background-position: center;
+           
+        }
+/* the class of animations */
+.animation_background_img{
+    animation: growBackground 1s forwards ease-in-out;
+}
+
+/* background image animation */
+        @keyframes growBackground {
+  from {
+    background-size: 0%;
+    background-position: center;
+  }
+  to {
+    background-size: 100%;
+    background-position: center;
+  }
+}
+        @keyframes shrink {
+            from {
+              background-size: 50%;
+              background-position: right;
+            }
+  to {
+    background-size: 0%;
+    background-position: right;
+  }
+}
+
+.shrink{
+    animation: shrink 1s forwards ease-in-out;
+}
+
+
+/* moving background to the left */
+@keyframes background-left {
+        from{
+            background-size: 100% 100%;
+            background-position: right;
+        }
+        to{
+            background-size: 50% 100%;
+            background-position: right;
+        }
+}
+
+
+/* adding the keyframe to the background */
+.move-background-right{
+    animation: background-left 1s forwards ease;
+}
+
+.bar_img{
+    border-radius: 50%;
+    outline: solid black 1px;
+}
+
+
+/* making the form */
+.form_container{
+     width: 50vw;
+    
+}
+
+
+.form_container{
+    position: relative;
+}
+
+.form_nav {
+    position: absolute;
+    right: 50%;
+    top: 50%;
+    display: none;
+
+}
+.bar_img{
+    display: block;
+     height: 5rem;
+        width: 5rem;
+}
+
+
+
+/* animating the logo */
+@keyframes moveDiagonally {
+    0% {
+        transform: translate(0px, 0px) ;
+    }
+    100% {
+        transform: translate(-40vw, -48vh) ;
+    }
+}
+
+.logo_move1 {
+    display: inline;
+    animation: moveDiagonally .5s forwards ease-in-out;
+    position: absolute; 
+}
+
+
+@keyframes img_display {
+    from {
+        height: 0rem;
+        width: 0rem;
+    }
+    to {
+        height: 5rem;
+        width: 5rem;
+    }
+}
+
+.img_rag {
+     display: inline-block; 
+    animation: img_display 1s forwards ease-in-out;
+    position: absolute;
+}
+
+.hero{
+     display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 1rem;
+    margin-top:3vh;
+    margin-right: 2rem;
+}
+.intro{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+
+
+.main_sec{
+    margin-top: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+}
+.check{
+    width: 100%;
+    
+    display: flex;
+    
+}
+
+.main_sec_field{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.main_sec_field{
+    width: 70%;
+}
+
+.but{
+    width: 100%;
+}
+
+.style{
+    padding: 1rem;
+    outline: solid black 1px;
+    border-radius: 1rem;
+}
+
+.hide
+{
+    display: none;
+}
+
+.enroll{
+    padding: .7rem;
+    border-radius: .5rem;
+}
+
+button{
+    outline: solid black 1px;
+    cursor: pointer;
+    color: green;
+    font-weight: bold;
+}
+
+
+.visible {
+    animation: slideInFromLeft 1s ease forwards;
+  }
+
+  @keyframes slideInFromLeft {
+    0% {
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  
+  .hidden {
+    visibility: hidden;
+    opacity: 0;
+    transform: translateX(-100%); /* Move it off-screen to the left */
+    transition: opacity  4s ease, transform 4s ease;
+  }
+  .last {
+     opacity: 1;
+
+     transition: opacity  4s ease;
+  }
+  .fix{
+    transform: translateX(-100%); /* Move it off-screen to the left */
+    transition: opacity  1s ease, transform 1s ease;
+   }
+  .corr{
+    transform: translateY(-200%); /* Move it off-screen to the left */
+    transition: opacity  1.5s ease, transform 1.5s ease;
+  }
+  
+  /* Make visible and animate both opacity and position */
+  .visibleo {
+    visibility: visible;
+    opacity: 1;
+    transform: translateX(0); /* Move it into its original position */
+    transition: opacity 1s ease, transform 1s ease;
+  }
+
+
+p{
+    color: rgb(72, 71, 71);
+    font-size: large;
+}
+
+
+h1{
+    font-weight: bolder;
+    font-size:4rem;
+}
+
+.style:focus{
+    outline: solid green;
+}
+
+/* Hide the default checkbox */
+.custom-checkbox input[type="checkbox"] {
+    display: none;
+  }
+  
+  /* Style the custom checkbox */
+  .custom-checkbox {
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 16px;
+    user-select: none;
+  }
+  
+  /* Style the checkmark container */
+  .custom-checkbox .checkmark {
+    position: relative;
+    height: 20px;
+    width: 20px;
+    background-color: #f0f0f0;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    margin-right: 10px;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+  }
+  
+  /* Create the checkmark (hidden initially) */
+  .custom-checkbox .checkmark::after {
+    content: "";
+    position: absolute;
+    display: none;
+    left: 6px;
+    top: 2px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+  }
+
+
+
+  
+  
+  /* When checkbox is checked */
+  .custom-checkbox input[type="checkbox"]:checked + .checkmark {
+    background-color: #4caf50;
+    border-color: #4caf50;
+  }
+  
+  /* Show the checkmark when checked */
+  .custom-checkbox input[type="checkbox"]:checked + .checkmark::after {
+    display: block;
+  }
+  
+  /* Add hover effect */
+  .custom-checkbox:hover .checkmark {
+    background-color: #e6e6e6;
+  }
+  .submit{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+  }
+  .z{
+    opacity: 0;
+    visibility: hidden;
+    z-index: -100;
+  }
+
+  .imp{
+    width: 100%;
+    position: relative;
+  }
+
+  .imp label{
+        position: absolute;
+        top: 50%;
+        left: 5px;
+        transform: translateY(-50%);
+        transition: .5s;
+        background-color: white;
+  }
+
+  .imp input:focus~label{
+    top: 0;
+  }
+
+  
+  
+  @media only screen and (max-width: 861px) {
+    .form_container{
+         width: 100vw;
+        
+    }
+    .bar_img{
+        display: none;
+    }
+    .intro h{
+        margin-left: 1rem;
+    }
+    .hero-section{
+        padding-bottom: 50px;
+        background-image: none;
+    }
+  }
+
+  .spc{
+    font-weight: 700;
+    font-size: larger;
+  }
+
+  .enroll::after {
+    content: "Enroll Here";
+    position: absolute;
+    left: 50%;
+    top: 140%;
+    opacity: 0;
+    background-color: white;
+    transition: opacity 0.3s ease;
+  }
+
+  .enroll:hover::after {
+    opacity: 1;
+  }
+
+  .enroll{
+    background-color: white;
+    position: relative;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: black;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  }
